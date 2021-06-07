@@ -563,8 +563,8 @@
 
 ;;these cause problems if Integer and integer are the same as INTEGER
 
-#-(or lucid kcl) (deftype Integer() 'integer)
-#-(or lucid kcl) (deftype Rational() 'rational)
+;;#-(or lucid kcl) (deftype Integer() 'integer)
+;;#-(or lucid kcl) (deftype Rational() 'rational)
 ;;; etc could do single-float, double-float, complex, number, cons, ...
 
 ;; extra cases to consider: 
