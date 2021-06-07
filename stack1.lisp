@@ -10,7 +10,13 @@
 ;;(export '(stack make-stack spush spushframe spopframe spop sfind schange
 ;;		stack-ptr stack-frameptr sfindd stackprinter env))
 
-(defstruct (stack (:print-function stackprinter))
+(defstruct (stack (:print-function stackprinter)
+                  (:constructor make-stack
+                   (&key (size 100)
+                         (ptr 0)
+                         (frameptr -1)
+                         (vars (make-array size))
+                         (vals (make-array size)))))
   (size 100 :type fixnum) ;if no size is specified, how about 100?
   ;; ptr points to top of stack.  0<=ptr<size : the index in which to
   ;; store at the next "push".
