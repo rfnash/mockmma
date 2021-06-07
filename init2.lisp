@@ -1,5 +1,9 @@
 ;; for non-allegro CL systems.
 #+Allegro (excl::set-case-mode :case-sensitive-lower)
+(or (find-package 'excl)
+        (make-package 'excl))
+(defmacro excl::errorset (&rest forms)
+    `(values t ,(car forms)))
 (load "mma")
 (use-package :mma)
 (load "uconsalt")
