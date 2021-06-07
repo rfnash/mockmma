@@ -10,7 +10,7 @@
 (load "parser")
 (load "stack1")
 (load "disp1")
-(load "eval")
+(load "eval2")
 (load "poly")
 (load "rat1")
 (load "simp1")
