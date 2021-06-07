@@ -21,7 +21,9 @@
 ;;(export '(p  pc rc))
 
 (defvar mathbuffer nil) 
+(sb-ext::unlock-package "COMMON-LISP")
 (defvar stream t) ;; if needed
+(sb-ext::lock-package "COMMON-LISP")
 
 ;; The first section consists of readtable hacking for mathematica parser.
 ;; We set up a separate readtable for
