@@ -61,7 +61,7 @@
 
 (proclaim '(optimize (speed 3) (safety 0) (space 0) (compilation-speed 0)))
 
-(require 'poly) ;; need macro defs
+(load "poly") ;; need macro defs
 (in-package :mma)
 ;; export what other modules may need
 #+ignore (export '(make-fpe fpe-expand fpe-coef-p fpe-coefone-p fpe-negativep
