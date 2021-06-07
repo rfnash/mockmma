@@ -3,7 +3,7 @@
 ;;; written by Derek Lai, rewritten in parts by Richard Fateman
 ;;; (c) 1990, 1991, Richard J. Fateman, Derek Lai.
 
-;;(provide 'disp1)
+(provide 'disp1)
 (in-package :mma)
 ;;(require "mma")
 ;;(export '(COL disp dispstruct))
@@ -26,7 +26,9 @@
   (terpri)
   (td))
 
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
 (defvar stream t "default is to send output to display")
+#+sbcl (sb-ext::lock-package "COMMON-LISP")
 
 
 (defun disp (form &optional (stream t))

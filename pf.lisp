@@ -21,7 +21,7 @@
 ;;;;		 (VERTICALFORM 1 1 0 -1 SUPERSCRIPT 260 NONE 2)))
 ;;;;
 ;;;;
-;;(provide 'pf)
+(provide 'pf)
 ;;(require "mma")
 (in-package :mma)
 

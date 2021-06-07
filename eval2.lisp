@@ -5,22 +5,24 @@
 #+Allegro (excl::set-case-mode :case-sensitive-lower)
 (in-package :mma)
 (provide 'math-eval)
-(require "ucons1")
-(require "mma")
+#+Allegro (require "ucons1")
+(require 'mma)
 (require 'math-parser "parser")
-(require "stack1")
-(require "disp1")
-(require "pf")
-(require "simp1")
-(require "rat1")
+(require 'stack1)
+(require 'disp1)
+(require 'pf)
+(require 'simp1)
+(require 'rat1)
 (in-package :mma)
-(require "match")
+#+Allegro (require "match")
 (export '(tl mread1))
 
 ;;**********
 (import '(excl::errorset))  ;; your system may differ....
 ;;**********
 
+;; Unlocking needed for COUNT, And, *package*, maybe others
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
 (defvar COUNT 1 "line number for top-level. (same as (meval $Line))")
 (proclaim '(special env *expand*)) ;; environment
 (proclaim '(special
@@ -89,6 +91,8 @@
 		(disp (BuildFormat hs))
 ))))
    (Set  '$Line (setq COUNT (1+ COUNT))))))
+#+sbcl (sb-ext::lock-package "COMMON-LISP")
+;; "Unlocking needed for COUNT, And, *package*, maybe others" ends
 
 ;; this definition replaces the program in the parser file
 
@@ -181,7 +185,9 @@
 ;; (a) capitalization is observed  OR
 ;; (b) the package system is protecting it..
 
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
 (defun Set (lhs rhs &aux h);; lhs=rhs
+#+sbcl (sb-ext::lock-package "COMMON-LISP")
   
   ;; the value associated with the lhs will be stored
   ;; in the symbol table symtab, with the key h,

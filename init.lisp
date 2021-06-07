@@ -1,21 +1,21 @@
-
 #+Allegro (excl::set-case-mode :case-sensitive-lower)
+(or (find-package 'excl)
+        (make-package 'excl))
+(defmacro excl::errorset (&rest forms)
+    `(values t ,(car forms)))
 (load "mma")
 (use-package :mma)
-(load "hcons")
-(load "ucons1")
+#+Allegro (load "hcons")
+#+Allegro (load "ucons1")
+#+sbcl (load "uconsalt")
 (load "parser")
 (load "stack1")
 (load "disp1")
-(load "eval")
-(load "poly")
 (load "rat1")
 (load "simp1")
 (load "pf")
+#+Allegro (load "eval")
+#+sbcl (load "eval2")
+(load "poly")
 (load "match")
 (load "diffrat")
-
-
-
-
-

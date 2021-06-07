@@ -563,8 +563,8 @@
 
 ;;these cause problems if Integer and integer are the same as INTEGER
 
-#-(or lucid kcl) (deftype Integer() 'integer)
-#-(or lucid kcl) (deftype Rational() 'rational)
+#-(or lucid kcl sbcl) (deftype Integer() 'integer)
+#-(or lucid kcl sbcl) (deftype Rational() 'rational)
 ;;; etc could do single-float, double-float, complex, number, cons, ...
 
 ;; extra cases to consider: 
@@ -660,7 +660,7 @@
 (defun Less (x y)(cond ((and (numberp x)(numberp y))
 			  (< x y))
 			 (t `(Inequality ,x Less ,y))))
-(defun Equal(x y)(cond 
+#+Allegro (defun Equal(x y)(cond
 		  ((member x '(Indeterminate Infinity) :test #'eq)
 		   `(Inequality ,x Equal ,y))
 		  ((equalp x y)  t) ;; handles numbers too, if equal

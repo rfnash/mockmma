@@ -17,7 +17,7 @@
 	   #+Allegro(cond((eq *current-case-mode* :case-sensitive-lower))
 		(t (set-case-mode :case-sensitive-lower))))
 
-;; obsolete (provide 'mma)
+(provide 'mma)
 
 (defpackage :mma (:nicknames "MockMMA") (:use :common-lisp :excl))
 (in-package :mma)
