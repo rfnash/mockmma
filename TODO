@@ -1,0 +1,4 @@
+- Split commit in devel branch into logical steps with an explanation in the commit message, in order of the errors that come up, like in the master branch
+- Replace the master branch with devel
+- Figure out the case sensitivity issues
+- Figure out why most examples in the READMEs won't work
