@@ -1,4 +1,8 @@
 #+Allegro (excl::set-case-mode :case-sensitive-lower)
+#-Allegro (or (find-package 'excl)
+        (make-package 'excl))
+#-Allegro (defmacro excl::errorset (&rest forms)
+    `(values t ,(car forms)))
 (load "mma")
 (use-package :mma)
 #+Allegro (load "hcons")
