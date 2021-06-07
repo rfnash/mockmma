@@ -14,7 +14,6 @@
 (load "simp1")
 (load "rat1")
 (in-package :mma)
-(load "match")
 (export '(tl mread1))
 
 ;;**********
