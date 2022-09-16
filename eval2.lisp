@@ -15,6 +15,7 @@
 (load "rat1")
 (in-package :mma)
 (export '(tl mread1))
+#+ecl (require '#:package-locks)
 
 ;;**********
 (import '(excl::errorset))  ;; your system may differ....
@@ -180,8 +181,10 @@
 ;; (a) capitalization is observed  OR
 ;; (b) the package system is protecting it..
 
+#+ecl (ext:unlock-package "COMMON-LISP")
 (defun Set (lhs rhs &aux h);; lhs=rhs
-  
+#+ecl (ext:lock-package "COMMON-LISP")
+
   ;; the value associated with the lhs will be stored
   ;; in the symbol table symtab, with the key h,
   ;;  which is either the head of the lhs,
