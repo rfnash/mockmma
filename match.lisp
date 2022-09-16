@@ -661,15 +661,13 @@
 (defun Less (x y)(cond ((and (numberp x)(numberp y))
 			  (< x y))
 			 (t `(Inequality ,x Less ,y))))
-#+ecl (ext:unlock-package "COMMON-LISP")
-#-(or clisp abcl sbcl) (defun Equal(x y)(cond 
+#-(or clisp abcl sbcl ecl) (defun Equal(x y)(cond
 		  ((member x '(Indeterminate Infinity) :test #'eq)
 		   `(Inequality ,x Equal ,y))
 		  ((equalp x y)  t) ;; handles numbers too, if equal
 		  ((and(numberp x)(numberp y)) nil)
 		  ;; for now, we dump anything we can't prove into Inequality
 		  (t `(Inequality ,x Equal ,y))))
-#+ecl (ext:lock-package "COMMON-LISP")
 
 ;; need LessEqual  etc.
 
