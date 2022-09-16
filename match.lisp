@@ -563,9 +563,9 @@
 		      (eq (car x) typ)))
 
 ;;these cause problems if Integer and integer are the same as INTEGER
-
-#-(or lucid kcl clisp abcl sbcl) (deftype Integer() 'integer)
-#-(or lucid kcl clisp abcl sbcl) (deftype Rational() 'rational)
+;; Causes issues for lucid kcl abcl clisp sbcl
+#+(or Allegro ccl ecl) (deftype Integer() 'integer)
+#+(or Allegro ccl ecl) (deftype Rational() 'rational)
 ;;; etc could do single-float, double-float, complex, number, cons, ...
 
 ;; extra cases to consider: 
