@@ -4,5 +4,7 @@ with pkgs;
 mkShell {
   buildInputs = [
     bashInteractive
+    rlwrap
+    ecl
   ];
 }
