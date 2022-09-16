@@ -1,0 +1,2 @@
+#!/bin/sh
+cat <(echo :GO) - | ccl -l init.lisp -e '(tl)'

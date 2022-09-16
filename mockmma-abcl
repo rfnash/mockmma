@@ -1,0 +1,2 @@
+#!/bin/sh
+rlwrap abcl --load init.lisp --eval '(tl)'

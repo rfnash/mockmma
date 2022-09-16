@@ -1,0 +1,2 @@
+#!/bin/sh
+rlwrap ecl --load init.lisp --eval '(tl)'

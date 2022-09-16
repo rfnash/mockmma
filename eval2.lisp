@@ -22,6 +22,8 @@
 
 #+sbcl (sb-ext::unlock-package "COMMON-LISP")
 #+clisp (SETF (EXT:PACKAGE-LOCK "COMMON-LISP") nil)
+#+ecl (require '#:package-locks)
+#+ecl (ext:unlock-package "COMMON-LISP")
 (defvar COUNT 1 "line number for top-level. (same as (meval $Line))")
 (proclaim '(special env *expand*)) ;; environment
 (proclaim '(special

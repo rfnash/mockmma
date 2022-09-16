@@ -6,5 +6,10 @@ mkShell {
     bashInteractive
     sbcl
     rlwrap
+    roswell
+    clisp
+    ccl
+    ecl
+    abcl
   ];
 }
