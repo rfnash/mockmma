@@ -7,5 +7,6 @@ mkShell {
     rlwrap
     ecl
     ccl
+    clisp
   ];
 }
