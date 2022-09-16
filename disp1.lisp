@@ -26,9 +26,9 @@
   (terpri)
   (td))
 
-(sb-ext::unlock-package "COMMON-LISP")
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
 (defvar stream t "default is to send output to display")
-(sb-ext::lock-package "COMMON-LISP")
+#+sbcl (sb-ext::lock-package "COMMON-LISP")
 
 
 (defun disp (form &optional (stream t))

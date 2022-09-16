@@ -20,7 +20,8 @@
 (import '(excl::errorset))  ;; your system may differ....
 ;;**********
 
-(sb-ext::unlock-package "COMMON-LISP")
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
+#+clisp (SETF (EXT:PACKAGE-LOCK "COMMON-LISP") nil)
 (defvar COUNT 1 "line number for top-level. (same as (meval $Line))")
 (proclaim '(special env *expand*)) ;; environment
 (proclaim '(special

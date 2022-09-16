@@ -8,6 +8,7 @@
 ;; this line is not quite enough. Need to do, prior to compiling this
 ;; file, (set-case-mode :case-sensitive-lower)
 #+ignore ;; just use default case
+#+clisp (SETF (EXT:PACKAGE-LOCK "COMMON-LISP") nil)
 (eval-when (compile load eval)
 	   #+Allegro(cond((eq *current-case-mode* :case-sensitive-lower))
 			 (t (set-case-mode :case-sensitive-lower))))
@@ -21,9 +22,9 @@
 ;;(export '(p  pc rc))
 
 (defvar mathbuffer nil) 
-(sb-ext::unlock-package "COMMON-LISP")
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
 (defvar stream t) ;; if needed
-(sb-ext::lock-package "COMMON-LISP")
+#+sbcl (sb-ext::lock-package "COMMON-LISP")
 
 ;; The first section consists of readtable hacking for mathematica parser.
 ;; We set up a separate readtable for
