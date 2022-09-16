@@ -8,5 +8,6 @@ mkShell {
     ecl
     ccl
     clisp
+    abcl
   ];
 }

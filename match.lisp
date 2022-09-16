@@ -564,8 +564,8 @@
 
 ;;these cause problems if Integer and integer are the same as INTEGER
 
-#-(or lucid kcl clisp) (deftype Integer() 'integer)
-#-(or lucid kcl clisp) (deftype Rational() 'rational)
+#-(or lucid kcl clisp abcl) (deftype Integer() 'integer)
+#-(or lucid kcl clisp abcl) (deftype Rational() 'rational)
 ;;; etc could do single-float, double-float, complex, number, cons, ...
 
 ;; extra cases to consider: 
@@ -662,7 +662,7 @@
 			  (< x y))
 			 (t `(Inequality ,x Less ,y))))
 #+ecl (ext:unlock-package "COMMON-LISP")
-#-clisp (defun Equal(x y)(cond 
+#-(or clisp abcl) (defun Equal(x y)(cond 
 		  ((member x '(Indeterminate Infinity) :test #'eq)
 		   `(Inequality ,x Equal ,y))
 		  ((equalp x y)  t) ;; handles numbers too, if equal
