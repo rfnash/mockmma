@@ -1,0 +1,2 @@
+#!/bin/sh
+rlwrap sbcl --load init.lisp --eval '(tl)'

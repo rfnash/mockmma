@@ -16,6 +16,7 @@
 (in-package :mma)
 (export '(tl mread1))
 #+ecl (require '#:package-locks)
+#+sbcl (sb-ext::unlock-package "COMMON-LISP")
 
 ;;**********
 (import '(excl::errorset))  ;; your system may differ....

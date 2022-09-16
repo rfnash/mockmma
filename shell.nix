@@ -9,5 +9,6 @@ mkShell {
     ccl
     clisp
     abcl
+    sbcl
   ];
 }
