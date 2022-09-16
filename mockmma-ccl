@@ -1,0 +1,2 @@
+#!/bin/sh
+rlwrap ccl -l init.lisp -e '(tl)'

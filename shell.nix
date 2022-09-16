@@ -6,5 +6,6 @@ mkShell {
     bashInteractive
     rlwrap
     ecl
+    ccl
   ];
 }
