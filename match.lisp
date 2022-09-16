@@ -26,6 +26,7 @@
 ;;(require "stack1")
 (in-package :mma)
 
+#+ecl (require '#:package-locks)
 ;;; definition: a patternobject is like an expression but it can
 ;;; have (Pattern ...) or (Blank ..) subexpressions in it.
 
@@ -660,6 +661,7 @@
 (defun Less (x y)(cond ((and (numberp x)(numberp y))
 			  (< x y))
 			 (t `(Inequality ,x Less ,y))))
+#+ecl (ext:unlock-package "COMMON-LISP")
 (defun Equal(x y)(cond 
 		  ((member x '(Indeterminate Infinity) :test #'eq)
 		   `(Inequality ,x Equal ,y))
@@ -667,6 +669,7 @@
 		  ((and(numberp x)(numberp y)) nil)
 		  ;; for now, we dump anything we can't prove into Inequality
 		  (t `(Inequality ,x Equal ,y))))
+#+ecl (ext:lock-package "COMMON-LISP")
 
 ;; need LessEqual  etc.
 
