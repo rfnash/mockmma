@@ -5,5 +5,6 @@ mkShell {
   buildInputs = [
     bashInteractive
     sbcl
+    rlwrap
   ];
 }
