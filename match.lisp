@@ -661,7 +661,8 @@
 (defun Less (x y)(cond ((and (numberp x)(numberp y))
 			  (< x y))
 			 (t `(Inequality ,x Less ,y))))
-#-(or clisp abcl sbcl ecl) (defun Equal(x y)(cond
+;; Causes issues for abcl clisp ecl sbcl
+#+(or Allegro ccl) (defun Equal(x y)(cond
 		  ((member x '(Indeterminate Infinity) :test #'eq)
 		   `(Inequality ,x Equal ,y))
 		  ((equalp x y)  t) ;; handles numbers too, if equal
