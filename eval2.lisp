@@ -185,7 +185,7 @@
 ;; (b) the package system is protecting it..
 
 (defun Set (lhs rhs &aux h);; lhs=rhs
-  
+
   ;; the value associated with the lhs will be stored
   ;; in the symbol table symtab, with the key h,
   ;;  which is either the head of the lhs,

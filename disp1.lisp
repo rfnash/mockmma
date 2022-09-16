@@ -30,7 +30,6 @@
 (defvar stream t "default is to send output to display")
 #+sbcl (sb-ext::lock-package "COMMON-LISP")
 
-
 (defun disp (form &optional (stream t))
   (let ((LIST nil))
 	(format stream "~%")
